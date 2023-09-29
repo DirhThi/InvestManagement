@@ -5,7 +5,8 @@ import AuthNavigator from './AuthNavigator';
 import AppTabsNavigator from './AppTabsNavigator';
 import NAVIGATION_KEY from '../constants/NavigationKey';
 import { HomeScreen } from '../screens/HomeScreen/HomeScreen';
-
+import RegisterScreen from '../screens/RegisterScreen/RegisterScreen';
+import LoginScreen from '../screens/LoginScreen/LoginScreen';
 
 export default function Navigation() {
     // hooks
@@ -34,7 +35,7 @@ const Stack = createNativeStackNavigator();
 function RootNavigator() {
     // const isAppReady = useAppSelector((state) => state.application.isAppReady);
     // const { isLogin } = useAppSelector((state) => state.auth);
-    const isLogin = true;
+    const isLogin = false;
     // console.log(isAppReady);
     // if (!isAppReady) {
     //     return <IntroScreen />;
@@ -52,12 +53,22 @@ function RootNavigator() {
                     />
                 </>
             )}
-            <Stack.Group navigationKey={isLogin ? 'user' : 'guest'} screenOptions={{ presentation: 'modal' }}>
-                <Stack.Screen
-                    name={NAVIGATION_KEY.SamplePopup}
-                    component={HomeScreen}
-                    options={{ headerShown: true }}
-                />
+            <Stack.Group navigationKey={isLogin ? 'user' : 'guest'} >
+                
+            <Stack.Screen
+                        name={NAVIGATION_KEY.AppTabs}
+                        component={AppTabsNavigator}
+                        options={{ headerShown: false,gestureEnabled: false }}
+                    />
+                <Stack.Screen options={{
+                headerShown: false,gestureEnabled: false}}
+                name="login" 
+                component={LoginScreen} />
+             <Stack.Screen options={{
+                headerShown: false,gestureEnabled: false}} 
+                name="signup" 
+                component={RegisterScreen}/>
+            
             </Stack.Group>
         </Stack.Navigator>
     );
