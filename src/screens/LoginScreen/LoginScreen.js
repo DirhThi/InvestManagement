@@ -4,6 +4,8 @@ import { Ionicons } from "@expo/vector-icons";
 import NAVIGATION_KEY from "../../constants/NavigationKey";
 import { LoginAccount } from "../../../firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from 'react-redux';
+import { Login } from "../../store/actions";
 const auth = getAuth();
 
 export default function LoginScreen({ navigation }) {
@@ -12,7 +14,7 @@ export default function LoginScreen({ navigation }) {
 
   const [show, setShow] = useState(false);
   const showClick = () => setShow(!show);
-
+  const dispatch = useDispatch();
   const handleLogin = async () => {
    
   
@@ -20,14 +22,12 @@ export default function LoginScreen({ navigation }) {
       await LoginAccount(email, password);
       onAuthStateChanged(auth, (user) => {
         if (user) {
-          navigation.navigate(NAVIGATION_KEY.AppTabs)
           console.log("current user : ",user.email);
           console.log("current user : ",user.uid);
-
+          dispatch(Login(user.uid));
         }
         else{
           console.log("no user login");
-
         }
       });
     } catch (error) {

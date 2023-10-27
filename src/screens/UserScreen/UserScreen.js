@@ -1,17 +1,20 @@
 import { Text, Center, Button } from "native-base";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { Logout } from "../../../firebase";
-import NAVIGATION_KEY from "../../constants/NavigationKey";
+import {  LogoutAccount } from "../../../firebase";
+import { Logout } from "../../store/actions";
+import { useDispatch } from "react-redux";
 const auth = getAuth();
+
 export default function UserScreen({navigation}) {
+  const dispatch = useDispatch();
   const handleSigout = async () => {
     try {
-      await Logout();
+      await LogoutAccount();
       onAuthStateChanged(auth, (user) => {
         if (user) {
           console.log("user login : ", user.email);
         } else {
-          navigation.navigate(NAVIGATION_KEY.auth);
+          dispatch(Logout());
           console.log("logout");
         }
       });

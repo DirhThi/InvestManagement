@@ -48,7 +48,7 @@ export const RegisterAccount = async (email,password) => {
   );
 }
 
-export const Logout = async () => {
+export const LogoutAccount = async () => {
   try {
     await auth.signOut();
   } catch (error) {
