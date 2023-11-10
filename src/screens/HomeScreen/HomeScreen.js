@@ -93,13 +93,13 @@ export function HomeScreen({ navigation }) {
             </VStack>
             <VStack mt={3} ml={6} m={6} alignItems={"flex-start"}>
               <Text
-                fontSize={20}
+                fontSize={18}
                 color={"coolGray.500"}
                 fontWeight={"semibold"}
               >
                 Quỹ đầu tư
               </Text>
-              <Text fontSize={30} fontWeight={"bold"}>
+              <Text fontSize={24} fontWeight={"bold"}>
                 1000000
               </Text>
             </VStack>
@@ -143,7 +143,7 @@ export function HomeScreen({ navigation }) {
                 bg={"#93FCF8"}
               >
                 <View w={10} h={10} bg={"black"} borderRadius={50}></View>
-                <Text fontSize={22} fontWeight={"bold"}>
+                <Text fontSize={20} fontWeight={"semibold"}>
                   Quỹ vay và cho vay
                 </Text>
                 <HStack
@@ -171,7 +171,7 @@ export function HomeScreen({ navigation }) {
               >
                 <View mb={8}>
                   <View w={10} h={10} bg={"black"} borderRadius={50}></View>
-                  <Text fontSize={22} fontWeight={"bold"}>
+                  <Text fontSize={20} fontWeight={"semibold"}>
                     Sổ tiết kiệm
                   </Text>
                 </View>
@@ -201,7 +201,7 @@ export function HomeScreen({ navigation }) {
               >
                 <View mb={8}>
                   <View w={10} h={10} bg={"black"} borderRadius={50}></View>
-                  <Text fontSize={22} fontWeight={"bold"}>
+                  <Text fontSize={20} fontWeight={"semibold"}>
                     Quỹ hụi
                   </Text>
                 </View>
@@ -229,7 +229,7 @@ export function HomeScreen({ navigation }) {
               >
                 <View>
                   <View w={10} h={10} bg={"black"} borderRadius={50}></View>
-                  <Text fontSize={22} fontWeight={"bold"}>
+                  <Text fontSize={20} fontWeight={"semibold"}>
                     Khoản cố định
                   </Text>
                 </View>
@@ -364,35 +364,7 @@ export function HomeScreen({ navigation }) {
                 </Text>
               </VStack>
             </HStack>
-            <HStack mb={2} p={3} borderRadius={10} bg={"#93FCF8"} justifyContent={"space-between"}>
-              <HStack>
-                <View w={12} h={12} bg={"black"} borderRadius={50}></View>
-                <VStack pl={2}>
-                  <Text
-                    fontSize={14}
-                    color={"coolGray.400"}
-                    fontWeight={"medium"}
-                  >
-                    Quỹ vay và cho vay
-                  </Text>
-                  <Text fontSize={16} fontWeight={"bold"}>
-                    Vay mua xe
-                  </Text>
-                </VStack>
-              </HStack>
-              <VStack alignItems={"flex-end"}>
-                <Text
-                  fontSize={14}
-                  color={"coolGray.400"}
-                  fontWeight={"medium"}
-                >
-                  Trả lãi
-                </Text>
-                <Text fontSize={16} fontWeight={"bold"}>
-                  2000000
-                </Text>
-              </VStack>
-            </HStack>
+            
           </VStack>
         </View>
       </ScrollView>
