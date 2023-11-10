@@ -8,6 +8,7 @@ import { useTheme } from 'native-base';
 import UserScreen from '../screens/UserScreen/UserScreen';
 import transactionScreen from '../screens/TransactionScreen/TransactionScreen';
 import ReportScreen from '../screens/Report/ReportScreen';
+import AddInvestScreen from '../screens/AddInvest/addInvest';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -35,6 +36,15 @@ export default function AppTabsNavigator() {
                 options={{
                     title: 'Giao dịch ',
                     tabBarIcon: () => <Ionicons name="wallet-outline" size={24} color={colors.primary[500]} />,
+                }}
+            />
+            <BottomTab.Screen
+                name="addinvestScreen"
+                component={AddInvestScreen}
+                options={{
+                    tabBarLabel:() => {return null},
+                    title: 'Thêm quỹ đầu tư',
+                    tabBarIcon: () => <AntDesign  name="pluscircle" size={48} color={colors.primary[500]} />,
                 }}
             />
             <BottomTab.Screen

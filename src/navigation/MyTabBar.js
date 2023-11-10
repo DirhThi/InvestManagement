@@ -45,7 +45,7 @@ export const MyTabBar = ({ state, descriptors, navigation }) => {
                                 h={1}
                                 borderBottomRadius={4}
                                 flex={1}
-                                bg={isFocused ? 'primary.500' : 'transparent'}
+                                bg={isFocused ? ( index==2 ? 'transparent' : 'primary.500' ) : 'transparent'}
                             ></Box>
                             <Box flex={0.5}></Box>
                         </HStack>
