@@ -1,6 +1,13 @@
 import { View, Center, Text, HStack, VStack, ScrollView } from "native-base";
 import { PieChart } from "react-native-gifted-charts";
-import { Entypo } from "@expo/vector-icons";
+import {
+  Entypo,
+  FontAwesome,
+  FontAwesome5,
+  Ionicons,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native";
 
 export function HomeScreen({ navigation }) {
   const pieData = [
@@ -63,15 +70,15 @@ export function HomeScreen({ navigation }) {
             </HStack>
           </HStack>
           <HStack>
-            <VStack ml={6} mt={-4}>
-              <View ml={4}>
+            <VStack ml={0} mt={-2}>
+              <View ml={0}>
                 <PieChart
                   focusOnPress={true}
                   data={pieData}
                   donut
                   showGradient
                   sectionAutoFocus
-                  radius={50}
+                  radius={60}
                   innerRadius={20}
                   innerCircleColor={"#232B5D"}
                   centerLabelComponent={() => {
@@ -79,29 +86,41 @@ export function HomeScreen({ navigation }) {
                   }}
                 />
               </View>
-
-              <HStack>
-                <HStack mr={2} alignItems={"center"}>
-                  {renderDot("#93FCF8")}
-                  <Text>Đầu tư</Text>
-                </HStack>
-                <HStack alignItems={"center"}>
-                  {renderDot("#8F80F3")}
-                  <Text>Lợi nhuận</Text>
-                </HStack>
-              </HStack>
             </VStack>
-            <VStack mt={3} ml={6} m={6} alignItems={"flex-start"}>
-              <Text
-                fontSize={18}
-                color={"coolGray.500"}
-                fontWeight={"semibold"}
-              >
-                Quỹ đầu tư
+            <VStack m={4} alignItems={"flex-start"}>
+              <HStack alignItems={"center"}>
+                {renderDot("#232B5D")}
+                <Text color={"coolGray.500"} fontWeight={"semibold"}>
+                  Quỹ đầu tư
+                </Text>
+              </HStack>
+              <Text fontSize={18} fontWeight={"bold"}>
+                1.300.000
               </Text>
-              <Text fontSize={24} fontWeight={"bold"}>
-                1000000
-              </Text>
+              <HStack>
+                <VStack mr={2}>
+                  <HStack alignItems={"center"}>
+                    {renderDot("#93FCF8")}
+                    <Text color={"coolGray.500"} fontWeight={"semibold"}>
+                      Đầu tư
+                    </Text>
+                  </HStack>
+                  <Text fontSize={18} fontWeight={"bold"}>
+                    1.000.000
+                  </Text>
+                </VStack>
+                <VStack mr={2}>
+                  <HStack alignItems={"center"}>
+                    {renderDot("#8F80F3")}
+                    <Text color={"coolGray.500"} fontWeight={"semibold"}>
+                      Lợi nhuận
+                    </Text>
+                  </HStack>
+                  <Text fontSize={18} fontWeight={"bold"}>
+                    300.000
+                  </Text>
+                </VStack>
+              </HStack>
             </VStack>
           </HStack>
         </View>
@@ -133,44 +152,93 @@ export function HomeScreen({ navigation }) {
             </HStack>
           </HStack>
           <View p={4} h={"full"} width={"full"}>
-            <HStack mb={5} justifyContent={"space-around"} h={"160"}>
-              <View
-                p={3}
-                alignItems={"start"}
-                borderRadius={10}
-                height={"full"}
-                width={"45%"}
-                bg={"#93FCF8"}
-              >
-                <View w={10} h={10} bg={"black"} borderRadius={50}></View>
-                <Text fontSize={20} fontWeight={"semibold"}>
-                  Quỹ vay và cho vay
-                </Text>
-                <HStack
-                  w={"full"}
-                  flex={1}
-                  alignSelf={"end"}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                  mt={2}
+            <HStack mb={4} justifyContent={"space-around"} h={"160"}>
+              <TouchableOpacity onPress={() => navigation.navigate("loanlist")}>
+                <View
+                  p={3}
+                  alignItems={"start"}
+                  borderRadius={10}
+                  height={"full"}
+                  width={"150"}
+                  bg={"blue.100"}
                 >
-                  <Text fontSize={16} fontWeight={"bold"}>
-                    1000000
+                  <HStack w={"full"} justifyContent={"space-between"}>
+                    <View
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      w={12}
+                      h={12}
+                      bg={"white"}
+                      borderRadius={50}
+                    >
+                      <FontAwesome name="bank" size={24} color="#4895ef" />
+                    </View>
+                    <View
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      w={6}
+                      h={6}
+                      bg={"white"}
+                      borderRadius={50}
+                    >
+                      <Text fontWeight={"bold"}>2</Text>
+                    </View>
+                  </HStack>
+                  <Text fontSize={20} fontWeight={"semibold"}>
+                    Quỹ vay và cho vay
                   </Text>
-                  <Entypo name="chevron-right" size={20} color="#adb5bd" />
-                </HStack>
-              </View>
+                  <HStack
+                    w={"full"}
+                    flex={1}
+                    alignSelf={"end"}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                    mt={2}
+                  >
+                    <Text fontSize={16} fontWeight={"bold"}>
+                      1000000
+                    </Text>
+                    <Entypo name="chevron-right" size={20} color="#adb5bd" />
+                  </HStack>
+                </View>
+              </TouchableOpacity>
 
               <View
                 p={3}
                 alignItems={"start"}
                 borderRadius={10}
                 height={"full"}
-                width={"45%"}
-                bg={"#93FCF8"}
+                width={"150"}
+                bg={"blue.100"}
               >
                 <View mb={8}>
-                  <View w={10} h={10} bg={"black"} borderRadius={50}></View>
+                  <HStack w={"full"} justifyContent={"space-between"}>
+                    <View
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      w={12}
+                      h={12}
+                      bg={"white"}
+                      borderRadius={50}
+                    >
+                      <FontAwesome5
+                        name="piggy-bank"
+                        size={26}
+                        color="#4895ef"
+                      />
+                    </View>
+                    <View
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      w={6}
+                      h={6}
+                      bg={"white"}
+                      borderRadius={50}
+                    >
+                      <Text fontWeight={"bold"}>1</Text>
+                    </View>
+                  </HStack>
+
                   <Text fontSize={20} fontWeight={"semibold"}>
                     Sổ tiết kiệm
                   </Text>
@@ -196,11 +264,37 @@ export function HomeScreen({ navigation }) {
                 alignItems={"start"}
                 borderRadius={10}
                 height={"full"}
-                width={"45%"}
-                bg={"#93FCF8"}
+                width={"150"}
+                bg={"blue.100"}
               >
                 <View mb={8}>
-                  <View w={10} h={10} bg={"black"} borderRadius={50}></View>
+                  <HStack w={"full"} justifyContent={"space-between"}>
+                    <View
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      w={12}
+                      h={12}
+                      bg={"white"}
+                      borderRadius={50}
+                    >
+                      <Ionicons
+                        name="md-people-sharp"
+                        size={28}
+                        color="#4895ef"
+                      />
+                    </View>
+                    <View
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      w={6}
+                      h={6}
+                      bg={"white"}
+                      borderRadius={50}
+                    >
+                      <Text fontWeight={"bold"}>0</Text>
+                    </View>
+                  </HStack>
+
                   <Text fontSize={20} fontWeight={"semibold"}>
                     Quỹ hụi
                   </Text>
@@ -224,11 +318,37 @@ export function HomeScreen({ navigation }) {
                 alignItems={"start"}
                 borderRadius={10}
                 height={"full"}
-                width={"45%"}
-                bg={"#93FCF8"}
+                width={"150"}
+                bg={"blue.100"}
               >
                 <View>
-                  <View w={10} h={10} bg={"black"} borderRadius={50}></View>
+                  <HStack w={"full"} justifyContent={"space-between"}>
+                    <View
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      w={12}
+                      h={12}
+                      bg={"white"}
+                      borderRadius={50}
+                    >
+                      <FontAwesome5
+                        name="file-invoice-dollar"
+                        size={24}
+                        color="#4895ef"
+                      />
+                    </View>
+                    <View
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                      w={6}
+                      h={6}
+                      bg={"white"}
+                      borderRadius={50}
+                    >
+                      <Text fontWeight={"bold"}>3</Text>
+                    </View>
+                  </HStack>
+
                   <Text fontSize={20} fontWeight={"semibold"}>
                     Khoản cố định
                   </Text>
@@ -277,9 +397,24 @@ export function HomeScreen({ navigation }) {
             </HStack>
           </HStack>
           <VStack pl={2} pr={2}>
-            <HStack mb={2} p={3} borderRadius={10} bg={"#93FCF8"} justifyContent={"space-between"}>
+            <HStack
+              mb={2}
+              p={3}
+              borderRadius={10}
+              bg={"blue.100"}
+              justifyContent={"space-between"}
+            >
               <HStack>
-                <View w={12} h={12} bg={"black"} borderRadius={50}></View>
+                <View
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  w={12}
+                  h={12}
+                  bg={"white"}
+                  borderRadius={50}
+                >
+                  <FontAwesome name="bank" size={24} color="#4895ef" />
+                </View>
                 <VStack pl={2}>
                   <Text
                     fontSize={14}
@@ -306,9 +441,24 @@ export function HomeScreen({ navigation }) {
                 </Text>
               </VStack>
             </HStack>
-            <HStack mb={2} p={3} borderRadius={10} bg={"#93FCF8"} justifyContent={"space-between"}>
+            <HStack
+              mb={2}
+              p={3}
+              borderRadius={10}
+              bg={"blue.100"}
+              justifyContent={"space-between"}
+            >
               <HStack>
-                <View w={12} h={12} bg={"black"} borderRadius={50}></View>
+                <View
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  w={12}
+                  h={12}
+                  bg={"white"}
+                  borderRadius={50}
+                >
+                  <FontAwesome name="bank" size={24} color="#4895ef" />
+                </View>
                 <VStack pl={2}>
                   <Text
                     fontSize={14}
@@ -335,9 +485,24 @@ export function HomeScreen({ navigation }) {
                 </Text>
               </VStack>
             </HStack>
-            <HStack mb={2} p={3} borderRadius={10} bg={"#93FCF8"} justifyContent={"space-between"}>
+            <HStack
+              mb={2}
+              p={3}
+              borderRadius={10}
+              bg={"blue.100"}
+              justifyContent={"space-between"}
+            >
               <HStack>
-                <View w={12} h={12} bg={"black"} borderRadius={50}></View>
+                <View
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  w={12}
+                  h={12}
+                  bg={"white"}
+                  borderRadius={50}
+                >
+                  <FontAwesome name="bank" size={24} color="#4895ef" />
+                </View>
                 <VStack pl={2}>
                   <Text
                     fontSize={14}
@@ -364,7 +529,6 @@ export function HomeScreen({ navigation }) {
                 </Text>
               </VStack>
             </HStack>
-            
           </VStack>
         </View>
       </ScrollView>

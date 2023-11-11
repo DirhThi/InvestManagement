@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
 import { View } from "native-base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import LoanScreen from "../screens/AddInvest/Loan";
+import LoanListScreen from "../screens/HomeScreen/loanList";
 export default function Navigation() {
   // hooks
   // action
@@ -98,7 +99,15 @@ function RootNavigator() {
           name="loan"
           component={LoanScreen}
         />
-
+        <Stack.Screen
+          options={{
+            title: "Quỹ vay và cho vay",
+            headerShown: true,
+            gestureEnabled: true,
+          }}
+          name="loanlist"
+          component={LoanListScreen}
+        />
         <Stack.Screen
           options={{
             headerShown: false,

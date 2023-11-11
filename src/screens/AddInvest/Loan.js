@@ -1,9 +1,9 @@
-import { View, Text, Select, Input, HStack } from "native-base";
+import { View, Text, Select, Input, HStack, Button } from "native-base";
 import { useState } from "react";
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 import {
   Feather,
   AntDesign,
-  FontAwesome,
   MaterialCommunityIcons,
   Entypo,
 } from "@expo/vector-icons";
@@ -11,7 +11,20 @@ import { TouchableOpacity } from "react-native";
 export default function LoanScreen({ navigation }) {
   const [loan, setLoan] = useState("Quỹ vay");
   const [chuki, setChuki] = useState("");
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+  const [date, setDate] = useState(new Date());
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
+  };
 
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
+  };
+
+  const handleConfirm = (date) => {
+    setDate(date);
+    hideDatePicker();
+  };
   return (
     <View justifyContent={"center"} borderRadius={10} p={2} m={2} bg={"white"}>
       <Select
@@ -26,6 +39,16 @@ export default function LoanScreen({ navigation }) {
         placeholder="Chọn quỹ vay"
         mt={1}
         onValueChange={(itemValue) => setLoan(itemValue)}
+        dropdownCloseIcon={
+          <View mr={2}>
+            <Feather name="chevron-down" size={24} color="gray" />
+          </View>
+        }
+        dropdownOpenIcon={
+          <View mr={2}>
+            <Feather name="chevron-up" size={24} color="gray" />
+          </View>
+        }
       >
         <Select.Item label="Quỹ vay" value="Quỹ vay" />
         <Select.Item label="Quỹ cho vay" value="Quỹ cho vay" />
@@ -59,6 +82,28 @@ export default function LoanScreen({ navigation }) {
           h={12}
         ></Input>
       </View>
+      <View>
+        <Text mt={2} fontWeight={"medium"}>
+          Thời gian bắt đầu
+        </Text>
+        <Button
+          height={12}
+          variant={"outline"}
+          title="Show Date Picker"
+          onPress={showDatePicker}
+        >
+          <Text fontSize={16}>{date.toLocaleDateString()}</Text>
+        </Button>
+        <DateTimePickerModal
+          isVisible={isDatePickerVisible}
+          mode="date"
+          onCancel={hideDatePicker}
+          onConfirm={handleConfirm}
+          locale="vi_VN"
+          confirmTextIOS="Xác nhận"
+          cancelTextIOS="Hủy"
+        />
+      </View>
       <HStack mt={2} justifyContent={"space-between"}>
         <View w={"48%"}>
           <Text fontWeight={"medium"}>Lãi suất</Text>
@@ -84,6 +129,16 @@ export default function LoanScreen({ navigation }) {
             accessibilityLabel="Chọn chu kì"
             placeholder="Chọn chu kì"
             onValueChange={(itemValue) => setChuki(itemValue)}
+            dropdownCloseIcon={
+              <View mr={2}>
+                <Feather name="chevron-down" size={24} color="gray" />
+              </View>
+            }
+            dropdownOpenIcon={
+              <View mr={2}>
+                <Feather name="chevron-up" size={24} color="gray" />
+              </View>
+            }
           >
             <Select.Item label="Tuần" value="Tuần" />
             <Select.Item label="Tháng" value="Tháng" />
@@ -127,14 +182,26 @@ export default function LoanScreen({ navigation }) {
         </View>
       </HStack>
       <HStack justifyContent={"center"}>
-      <TouchableOpacity>
-          <HStack borderWidth={2} borderColor={"blue.300"}  mt={10} mb={8} borderRadius={8} h={12} alignItems={"center"} justifyContent={"center"}  bg={"blue.100"} w={'160'}>
+        <TouchableOpacity>
+          <HStack
+            borderWidth={2}
+            borderColor={"blue.300"}
+            mt={10}
+            mb={8}
+            borderRadius={8}
+            h={12}
+            alignItems={"center"}
+            justifyContent={"center"}
+            bg={"blue.100"}
+            w={"160"}
+          >
             <Entypo name="save" size={24} color="gray" />
-            <Text ml={2} fontWeight={"medium"} fontSize={18}>XÁC NHẬN</Text>
+            <Text ml={2} fontWeight={"medium"} fontSize={18}>
+              XÁC NHẬN
+            </Text>
           </HStack>
-      </TouchableOpacity>
+        </TouchableOpacity>
       </HStack>
-      
     </View>
   );
 }
