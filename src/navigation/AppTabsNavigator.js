@@ -6,7 +6,7 @@ import { MyTabBar } from './MyTabBar';
 import { Ionicons,AntDesign } from '@expo/vector-icons';
 import { useTheme } from 'native-base';
 import UserScreen from '../screens/UserScreen/UserScreen';
-import transactionScreen from '../screens/TransactionScreen/TransactionScreen';
+import TransactionScreen from '../screens/TransactionScreen/TransactionScreen';
 import ReportScreen from '../screens/Report/ReportScreen';
 import AddInvestScreen from '../screens/AddInvest/addInvest';
 
@@ -32,7 +32,7 @@ export default function AppTabsNavigator() {
             />
             <BottomTab.Screen
                 name="transactionScreen"
-                component={transactionScreen}
+                component={TransactionScreen}
                 options={{
                     title: 'Giao dịch ',
                     tabBarIcon: () => <Ionicons name="wallet-outline" size={24} color={colors.primary[500]} />,

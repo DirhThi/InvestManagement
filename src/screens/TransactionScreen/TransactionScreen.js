@@ -1,7 +1,7 @@
 import { View, Text, Button, Select,HStack,VStack } from "native-base";
 import { TouchableOpacity } from "react-native";
 import { useState } from "react";
-export default function transactionScreen({ navigation }) {
+export default function TransactionScreen({ navigation }) {
   const [service, setService] = useState("ux");
   return (
     <View   p={2}
