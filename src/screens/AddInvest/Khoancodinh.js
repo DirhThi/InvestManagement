@@ -8,8 +8,8 @@ import {
   Entypo,
 } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
-export default function LoanScreen({ navigation }) {
-  const [loan, setLoan] = useState("Quỹ vay");
+export default function ThemKhoanCoDinh({ navigation }) {
+  const [loan, setLoan] = useState("Quỹ thu");
   const [chuki, setChuki] = useState("");
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [date, setDate] = useState(new Date());
@@ -35,8 +35,8 @@ export default function LoanScreen({ navigation }) {
         fontWeight={"bold"}
         selectedValue={loan}
         justifyContent={"center"}
-        accessibilityLabel="Chọn quỹ vay"
-        placeholder="Chọn quỹ vay"
+        accessibilityLabel="Chọn loại quỹ"
+        placeholder="Chọn loại quỹ"
         mt={1}
         onValueChange={(itemValue) => setLoan(itemValue)}
         dropdownCloseIcon={
@@ -50,8 +50,8 @@ export default function LoanScreen({ navigation }) {
           </View>
         }
       >
-        <Select.Item label="Quỹ vay" value="Quỹ vay" />
-        <Select.Item label="Quỹ cho vay" value="Quỹ cho vay" />
+        <Select.Item label="Quỹ thu" value="Quỹ thu" />
+        <Select.Item label="Quỹ chi" value="Quỹ chi" />
       </Select>
       <View>
         <Text fontWeight={"medium"}>Tên quỹ</Text>
@@ -109,20 +109,7 @@ export default function LoanScreen({ navigation }) {
         />
       </View>
       <HStack mt={2} justifyContent={"space-between"}>
-        <View w={"48%"}>
-          <Text fontWeight={"medium"}>Lãi suất</Text>
-          <Input
-            InputRightElement={
-              <View mr={2}>
-                <Feather name="percent" size={18} color="gray" />
-              </View>
-            }
-            keyboardType="numeric"
-            placeholder="Nhập lãi suất"
-            fontSize={16}
-            h={12}
-          ></Input>
-        </View>
+      
         <View w={"48%"}>
           <Text fontWeight={"medium"}>Chu kì</Text>
           <Select
@@ -150,26 +137,6 @@ export default function LoanScreen({ navigation }) {
             <Select.Item label="Năm" value="Năm" />
           </Select>
         </View>
-      </HStack>
-      <HStack mt={2} justifyContent={"space-between"}>
-        <View w={"48%"}>
-          <Text fontWeight={"medium"}>Ưu đãi</Text>
-          <Input
-            InputRightElement={
-              <View mr={2}>
-                <MaterialCommunityIcons
-                  name="ticket-percent-outline"
-                  size={20}
-                  color="gray"
-                />
-              </View>
-            }
-            keyboardType="numeric"
-            placeholder="Nhập ưu đãi"
-            fontSize={16}
-            h={12}
-          ></Input>
-        </View>
         <View w={"48%"}>
           <Text fontWeight={"medium"}>Thời hạn</Text>
           <Input
@@ -185,6 +152,7 @@ export default function LoanScreen({ navigation }) {
           ></Input>
         </View>
       </HStack>
+     
       <HStack justifyContent={"center"}>
         <TouchableOpacity>
           <HStack

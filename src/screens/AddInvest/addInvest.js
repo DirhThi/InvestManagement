@@ -38,6 +38,7 @@ export default function AddInvestScreen({ navigation }) {
             <AntDesign name="pluscircleo" size={30} color="#adb5bd" />
           </HStack>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("addsotietkiem")}>
 
         <HStack
           borderRadius={10}
@@ -66,6 +67,9 @@ export default function AddInvestScreen({ navigation }) {
           </HStack>
           <AntDesign name="pluscircleo" size={30} color="#adb5bd" />
         </HStack>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("addquyhui")}>
+
         <HStack
           borderRadius={10}
           alignItems={"center"}
@@ -94,6 +98,9 @@ export default function AddInvestScreen({ navigation }) {
 
           <AntDesign name="pluscircleo" size={30} color="#adb5bd" />
         </HStack>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("addkhoancodinh")}>
+
         <HStack
           borderRadius={10}
           alignItems={"center"}
@@ -125,6 +132,7 @@ export default function AddInvestScreen({ navigation }) {
           </HStack>
           <AntDesign name="pluscircleo" size={30} color="#adb5bd" />
         </HStack>
+        </TouchableOpacity>
       </View>
     </VStack>
   );

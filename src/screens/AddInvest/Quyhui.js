@@ -6,9 +6,10 @@ import {
   AntDesign,
   MaterialCommunityIcons,
   Entypo,
+  Ionicons,
 } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
-export default function LoanScreen({ navigation }) {
+export default function ThemQuyHui({ navigation }) {
   const [loan, setLoan] = useState("Quỹ vay");
   const [chuki, setChuki] = useState("");
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
@@ -27,41 +28,16 @@ export default function LoanScreen({ navigation }) {
   };
   return (
     <View justifyContent={"center"} borderRadius={10} p={2} m={2} bg={"white"}>
-      <Select
-        h={12}
-        mb={2}
-        variant="filled"
-        fontSize={20}
-        fontWeight={"bold"}
-        selectedValue={loan}
-        justifyContent={"center"}
-        accessibilityLabel="Chọn quỹ vay"
-        placeholder="Chọn quỹ vay"
-        mt={1}
-        onValueChange={(itemValue) => setLoan(itemValue)}
-        dropdownCloseIcon={
-          <View mr={2}>
-            <Feather name="chevron-down" size={24} color="gray" />
-          </View>
-        }
-        dropdownOpenIcon={
-          <View mr={2}>
-            <Feather name="chevron-up" size={24} color="gray" />
-          </View>
-        }
-      >
-        <Select.Item label="Quỹ vay" value="Quỹ vay" />
-        <Select.Item label="Quỹ cho vay" value="Quỹ cho vay" />
-      </Select>
+     
       <View>
-        <Text fontWeight={"medium"}>Tên quỹ</Text>
+        <Text fontWeight={"medium"}>Tên quỹ hụi</Text>
         <Input
           InputRightElement={
             <View mr={2}>
               <AntDesign name="home" size={20} color="gray" />
             </View>
           }
-          placeholder="Nhập tên quỹ"
+          placeholder="Nhập tên quỹ hụi"
           fontSize={16}
           h={12}
         ></Input>
@@ -110,15 +86,15 @@ export default function LoanScreen({ navigation }) {
       </View>
       <HStack mt={2} justifyContent={"space-between"}>
         <View w={"48%"}>
-          <Text fontWeight={"medium"}>Lãi suất</Text>
+          <Text fontWeight={"medium"}>Số chân bắt đầu</Text>
           <Input
             InputRightElement={
               <View mr={2}>
-                <Feather name="percent" size={18} color="gray" />
-              </View>
+<Ionicons name="ios-people-outline" size={22} color="gray" /> 
+             </View>
             }
             keyboardType="numeric"
-            placeholder="Nhập lãi suất"
+            placeholder="Nhập số chân"
             fontSize={16}
             h={12}
           ></Input>
@@ -151,40 +127,7 @@ export default function LoanScreen({ navigation }) {
           </Select>
         </View>
       </HStack>
-      <HStack mt={2} justifyContent={"space-between"}>
-        <View w={"48%"}>
-          <Text fontWeight={"medium"}>Ưu đãi</Text>
-          <Input
-            InputRightElement={
-              <View mr={2}>
-                <MaterialCommunityIcons
-                  name="ticket-percent-outline"
-                  size={20}
-                  color="gray"
-                />
-              </View>
-            }
-            keyboardType="numeric"
-            placeholder="Nhập ưu đãi"
-            fontSize={16}
-            h={12}
-          ></Input>
-        </View>
-        <View w={"48%"}>
-          <Text fontWeight={"medium"}>Thời hạn</Text>
-          <Input
-            InputRightElement={
-              <View mr={2}>
-                <Text color={"gray.500"}>{chuki}</Text>
-              </View>
-            }
-            keyboardType="numeric"
-            placeholder="Nhập thời hạn"
-            fontSize={16}
-            h={12}
-          ></Input>
-        </View>
-      </HStack>
+      
       <HStack justifyContent={"center"}>
         <TouchableOpacity>
           <HStack

@@ -14,6 +14,9 @@ import { View } from "native-base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import LoanScreen from "../screens/AddInvest/Loan";
 import LoanListScreen from "../screens/HomeScreen/loanList";
+import ThemSoTietKiem from "../screens/AddInvest/Sotienkiem";
+import ThemQuyHui from "../screens/AddInvest/Quyhui";
+import ThemKhoanCoDinh from "../screens/AddInvest/Khoancodinh";
 export default function Navigation() {
   // hooks
   // action
@@ -98,6 +101,33 @@ function RootNavigator() {
           }}
           name="loan"
           component={LoanScreen}
+        />
+        <Stack.Screen
+          options={{
+            title: "Thêm sổ tiết kiệm",
+            headerShown: true,
+            gestureEnabled: true,
+          }}
+          name="addsotietkiem"
+          component={ThemSoTietKiem}
+        />
+        <Stack.Screen
+          options={{
+            title: "Thêm quỹ hụi",
+            headerShown: true,
+            gestureEnabled: true,
+          }}
+          name="addquyhui"
+          component={ThemQuyHui}
+        />
+        <Stack.Screen
+          options={{
+            title: "Thêm khoản cố định",
+            headerShown: true,
+            gestureEnabled: true,
+          }}
+          name="addkhoancodinh"
+          component={ThemKhoanCoDinh}
         />
         <Stack.Screen
           options={{

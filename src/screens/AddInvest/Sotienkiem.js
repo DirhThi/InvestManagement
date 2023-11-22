@@ -8,7 +8,7 @@ import {
   Entypo,
 } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
-export default function LoanScreen({ navigation }) {
+export default function ThemSoTietKiem({ navigation }) {
   const [loan, setLoan] = useState("Quỹ vay");
   const [chuki, setChuki] = useState("");
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
@@ -27,41 +27,15 @@ export default function LoanScreen({ navigation }) {
   };
   return (
     <View justifyContent={"center"} borderRadius={10} p={2} m={2} bg={"white"}>
-      <Select
-        h={12}
-        mb={2}
-        variant="filled"
-        fontSize={20}
-        fontWeight={"bold"}
-        selectedValue={loan}
-        justifyContent={"center"}
-        accessibilityLabel="Chọn quỹ vay"
-        placeholder="Chọn quỹ vay"
-        mt={1}
-        onValueChange={(itemValue) => setLoan(itemValue)}
-        dropdownCloseIcon={
-          <View mr={2}>
-            <Feather name="chevron-down" size={24} color="gray" />
-          </View>
-        }
-        dropdownOpenIcon={
-          <View mr={2}>
-            <Feather name="chevron-up" size={24} color="gray" />
-          </View>
-        }
-      >
-        <Select.Item label="Quỹ vay" value="Quỹ vay" />
-        <Select.Item label="Quỹ cho vay" value="Quỹ cho vay" />
-      </Select>
       <View>
-        <Text fontWeight={"medium"}>Tên quỹ</Text>
+        <Text fontWeight={"medium"}>Tên sổ tiết kiệm</Text>
         <Input
           InputRightElement={
             <View mr={2}>
               <AntDesign name="home" size={20} color="gray" />
             </View>
           }
-          placeholder="Nhập tên quỹ"
+          placeholder="Nhập tên sổ tiết kiệm"
           fontSize={16}
           h={12}
         ></Input>
@@ -153,24 +127,6 @@ export default function LoanScreen({ navigation }) {
       </HStack>
       <HStack mt={2} justifyContent={"space-between"}>
         <View w={"48%"}>
-          <Text fontWeight={"medium"}>Ưu đãi</Text>
-          <Input
-            InputRightElement={
-              <View mr={2}>
-                <MaterialCommunityIcons
-                  name="ticket-percent-outline"
-                  size={20}
-                  color="gray"
-                />
-              </View>
-            }
-            keyboardType="numeric"
-            placeholder="Nhập ưu đãi"
-            fontSize={16}
-            h={12}
-          ></Input>
-        </View>
-        <View w={"48%"}>
           <Text fontWeight={"medium"}>Thời hạn</Text>
           <Input
             InputRightElement={
@@ -180,6 +136,22 @@ export default function LoanScreen({ navigation }) {
             }
             keyboardType="numeric"
             placeholder="Nhập thời hạn"
+            fontSize={16}
+            h={12}
+          ></Input>
+        </View>
+        <View w={"48%"}>
+          <Text fontWeight={"medium"}>Thời gian đáo hạn</Text>
+          <Input
+            InputRightElement={
+              <View mr={2}>
+                <AntDesign name="calendar" size={20} color="gray" />
+                
+              </View>
+            }
+            editable={false}
+            keyboardType="numeric"
+            placeholder="Thời gian đáo hạn"
             fontSize={16}
             h={12}
           ></Input>

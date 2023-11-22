@@ -15,17 +15,17 @@ export default function LoanListScreen({ navigation }) {
     <View p={2} ml={2} mr={2} mt={2} borderRadius={5} bg={"white"} h={"full"}>
       <View mb={2} p={3} pb={2} borderRadius={10} bg={"blue.100"}>
         <VStack>
-            <HStack alignItems={"center"} alignSelf={"flex-end"}>
+          <HStack alignItems={"center"} alignSelf={"flex-end"}>
             <FontAwesome5 name="hand-holding-usd" size={18} color="gray" />
             <Text
-                ml={1}
-                fontSize={16}
-                color={"coolGray.400"}
-                fontWeight={"normal"}
-              >
-                Chưa trả xong
-              </Text>
-            </HStack>
+              ml={1}
+              fontSize={16}
+              color={"coolGray.400"}
+              fontWeight={"normal"}
+            >
+              Chưa trả xong
+            </Text>
+          </HStack>
           <HStack>
             <VStack pl={2}>
               <Text
@@ -95,8 +95,38 @@ export default function LoanListScreen({ navigation }) {
             mb={2}
             orientation="horizontal"
           />
-            <HStack mb={2} justifyContent={"space-between"} alignItems={"center"} p={2} height={12} borderRadius={5} bg={"blue.50"}>
-            <HStack >
+          <VStack>
+            <HStack justifyContent={"space-between"} alignItems={"center"}>
+              <Text
+                mr={1}
+                fontSize={12}
+                color={"coolGray.400"}
+                fontWeight={"normal"}
+                fontStyle={"italic"}
+              >
+                30/9/2023
+              </Text>
+
+              <Text
+                mr={1}
+                fontSize={12}
+                color={"coolGray.400"}
+                fontWeight={"normal"}
+                fontStyle={"italic"}
+              >
+                22:09:20
+              </Text>
+            </HStack>
+
+            <HStack
+              mb={2}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              p={2}
+              height={12}
+              borderRadius={5}
+              bg={"blue.50"}
+            >
               <Text
                 mr={1}
                 fontSize={16}
@@ -109,58 +139,39 @@ export default function LoanListScreen({ navigation }) {
                 700.000
               </Text>
             </HStack>
-            <Text
+          </VStack>
+          <VStack>
+            <HStack justifyContent={"space-between"} alignItems={"center"}>
+              <Text
                 mr={1}
-                fontSize={16}
+                fontSize={12}
                 color={"coolGray.400"}
                 fontWeight={"normal"}
                 fontStyle={"italic"}
               >
-                10/9/2023
-                </Text>
-          </HStack>
-          <HStack
-            mb={2}
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            p={2}
-            height={12}
-            borderRadius={5}
-            bg={"blue.50"}
-          >
-            <HStack>
+                30/9/2023
+              </Text>
+
               <Text
                 mr={1}
-                fontSize={16}
+                fontSize={12}
                 color={"coolGray.400"}
-                fontWeight={"medium"}
+                fontWeight={"normal"}
+                fontStyle={"italic"}
               >
-                Trả trước :
-              </Text>
-              <Text fontSize={16} fontWeight={"bold"}>
-                10.000.000
+                22:09:20
               </Text>
             </HStack>
-            <Text
-              mr={1}
-              fontSize={16}
-              color={"coolGray.400"}
-              fontWeight={"normal"}
-              fontStyle={"italic"}
+
+            <HStack
+              mb={2}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              p={2}
+              height={12}
+              borderRadius={5}
+              bg={"blue.50"}
             >
-              30/9/2023
-            </Text>
-          </HStack>
-          <HStack
-            mb={2}
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            p={2}
-            height={12}
-            borderRadius={5}
-            bg={"blue.50"}
-          >
-            <HStack>
               <Text
                 mr={1}
                 fontSize={16}
@@ -170,29 +181,41 @@ export default function LoanListScreen({ navigation }) {
                 Trả lãi :
               </Text>
               <Text fontSize={16} fontWeight={"bold"}>
-                1.400.000
+                700.000
               </Text>
             </HStack>
-            <Text
-              mr={1}
-              fontSize={16}
-              color={"coolGray.400"}
-              fontWeight={"normal"}
-              fontStyle={"italic"}
+          </VStack><VStack>
+            <HStack justifyContent={"space-between"} alignItems={"center"}>
+              <Text
+                mr={1}
+                fontSize={12}
+                color={"coolGray.400"}
+                fontWeight={"normal"}
+                fontStyle={"italic"}
+              >
+                30/9/2023
+              </Text>
+
+              <Text
+                mr={1}
+                fontSize={12}
+                color={"coolGray.400"}
+                fontWeight={"normal"}
+                fontStyle={"italic"}
+              >
+                22:09:20
+              </Text>
+            </HStack>
+
+            <HStack
+              mb={2}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              p={2}
+              height={12}
+              borderRadius={5}
+              bg={"blue.50"}
             >
-              10/9/2023
-            </Text>
-          </HStack>
-          <HStack
-            mb={2}
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            p={2}
-            height={12}
-            borderRadius={5}
-            bg={"blue.50"}
-          >
-            <HStack>
               <Text
                 mr={1}
                 fontSize={16}
@@ -202,19 +225,54 @@ export default function LoanListScreen({ navigation }) {
                 Trả lãi :
               </Text>
               <Text fontSize={16} fontWeight={"bold"}>
-                1.400.000
+                700.000
               </Text>
             </HStack>
-            <Text
-              mr={1}
-              fontSize={16}
-              color={"coolGray.400"}
-              fontWeight={"normal"}
-              fontStyle={"italic"}
+          </VStack><VStack>
+            <HStack justifyContent={"space-between"} alignItems={"center"}>
+              <Text
+                mr={1}
+                fontSize={12}
+                color={"coolGray.400"}
+                fontWeight={"normal"}
+                fontStyle={"italic"}
+              >
+                30/9/2023
+              </Text>
+
+              <Text
+                mr={1}
+                fontSize={12}
+                color={"coolGray.400"}
+                fontWeight={"normal"}
+                fontStyle={"italic"}
+              >
+                22:09:20
+              </Text>
+            </HStack>
+
+            <HStack
+              mb={2}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              p={2}
+              height={12}
+              borderRadius={5}
+              bg={"blue.50"}
             >
-              10/8/2023
-            </Text>
-          </HStack>
+              <Text
+                mr={1}
+                fontSize={16}
+                color={"coolGray.400"}
+                fontWeight={"medium"}
+              >
+                Trả lãi :
+              </Text>
+              <Text fontSize={16} fontWeight={"bold"}>
+                700.000
+              </Text>
+            </HStack>
+          </VStack>
         </VStack>
       </View>
     </View>
