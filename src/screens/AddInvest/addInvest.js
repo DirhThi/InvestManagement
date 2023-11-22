@@ -35,103 +35,100 @@ export default function AddInvestScreen({ navigation }) {
                 Thêm quỹ vay và cho vay
               </Text>
             </HStack>
-            <AntDesign name="pluscircleo" size={30} color="#adb5bd" />
+            <AntDesign name="pluscircleo" size={24} color="#adb5bd" />
           </HStack>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("addsotietkiem")}>
-
-        <HStack
-          borderRadius={10}
-          alignItems={"center"}
-          h={"82"}
-          bg={"blue.100"}
-          p={3}
-          justifyContent={"space-between"}
-          mt={3}
-        >
-          <HStack alignItems={"center"}>
-            <View
-              mr={2}
-              justifyContent={"center"}
-              alignItems={"center"}
-              w={12}
-              h={12}
-              bg={"white"}
-              borderRadius={50}
-            >
-              <FontAwesome5 name="piggy-bank" size={26} color="#4895ef" />
-            </View>
-            <Text fontSize={20} fontWeight={"medium"}>
-              Thêm sổ tiết kiệm
-            </Text>
+          <HStack
+            borderRadius={10}
+            alignItems={"center"}
+            h={"82"}
+            bg={"blue.100"}
+            p={3}
+            justifyContent={"space-between"}
+            mt={3}
+          >
+            <HStack alignItems={"center"}>
+              <View
+                mr={2}
+                justifyContent={"center"}
+                alignItems={"center"}
+                w={12}
+                h={12}
+                bg={"white"}
+                borderRadius={50}
+              >
+                <FontAwesome5 name="piggy-bank" size={26} color="#4895ef" />
+              </View>
+              <Text fontSize={20} fontWeight={"medium"}>
+                Thêm sổ tiết kiệm
+              </Text>
+            </HStack>
+            <AntDesign name="pluscircleo" size={24} color="#adb5bd" />
           </HStack>
-          <AntDesign name="pluscircleo" size={30} color="#adb5bd" />
-        </HStack>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("addquyhui")}>
+          <HStack
+            borderRadius={10}
+            alignItems={"center"}
+            h={"82"}
+            bg={"blue.100"}
+            p={3}
+            justifyContent={"space-between"}
+            mt={3}
+          >
+            <HStack alignItems={"center"}>
+              <View
+                mr={2}
+                justifyContent={"center"}
+                alignItems={"center"}
+                w={12}
+                h={12}
+                bg={"white"}
+                borderRadius={50}
+              >
+                <Ionicons name="md-people-sharp" size={28} color="#4895ef" />
+              </View>
+              <Text fontSize={20} fontWeight={"medium"}>
+                Thêm quỹ hụi
+              </Text>
+            </HStack>
 
-        <HStack
-          borderRadius={10}
-          alignItems={"center"}
-          h={"82"}
-          bg={"blue.100"}
-          p={3}
-          justifyContent={"space-between"}
-          mt={3}
-        >
-          <HStack alignItems={"center"}>
-            <View
-              mr={2}
-              justifyContent={"center"}
-              alignItems={"center"}
-              w={12}
-              h={12}
-              bg={"white"}
-              borderRadius={50}
-            >
-              <Ionicons name="md-people-sharp" size={28} color="#4895ef" />
-            </View>
-            <Text fontSize={20} fontWeight={"medium"}>
-              Thêm quỹ hụi
-            </Text>
+            <AntDesign name="pluscircleo" size={24} color="#adb5bd" />
           </HStack>
-
-          <AntDesign name="pluscircleo" size={30} color="#adb5bd" />
-        </HStack>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("addkhoancodinh")}>
-
-        <HStack
-          borderRadius={10}
-          alignItems={"center"}
-          h={"82"}
-          bg={"blue.100"}
-          p={3}
-          justifyContent={"space-between"}
-          mt={3}
-        >
-           <HStack alignItems={"center"}>
-                    <View
-                    mr={2}
-                      justifyContent={"center"}
-                      alignItems={"center"}
-                      w={12}
-                      h={12}
-                      bg={"white"}
-                      borderRadius={50}
-                    >
-                      <FontAwesome5
-                        name="file-invoice-dollar"
-                        size={24}
-                        color="#4895ef"
-                      />
-                    </View>
-          <Text fontSize={20} fontWeight={"medium"}>
-            Thêm các khoản cố định
-          </Text>
+          <HStack
+            borderRadius={10}
+            alignItems={"center"}
+            h={"82"}
+            bg={"blue.100"}
+            p={3}
+            justifyContent={"space-between"}
+            mt={3}
+          >
+            <HStack alignItems={"center"}>
+              <View
+                mr={2}
+                justifyContent={"center"}
+                alignItems={"center"}
+                w={12}
+                h={12}
+                bg={"white"}
+                borderRadius={50}
+              >
+                <FontAwesome5
+                  name="file-invoice-dollar"
+                  size={24}
+                  color="#4895ef"
+                />
+              </View>
+              <Text fontSize={20} fontWeight={"medium"}>
+                Thêm các khoản cố định
+              </Text>
+            </HStack>
+            <AntDesign name="pluscircleo" size={24} color="#adb5bd" />
           </HStack>
-          <AntDesign name="pluscircleo" size={30} color="#adb5bd" />
-        </HStack>
         </TouchableOpacity>
       </View>
     </VStack>

@@ -13,6 +13,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 export default function LoanListScreen({ navigation }) {
   return (
     <View p={2} ml={2} mr={2} mt={2} borderRadius={5} bg={"white"} h={"full"}>
+      <TouchableOpacity onPress={() => navigation.navigate("chitietquyvay")}>
       <View mb={2} p={3} pb={2} borderRadius={10} bg={"blue.100"}>
         <VStack>
           <HStack alignItems={"center"} alignSelf={"flex-end"}>
@@ -26,7 +27,7 @@ export default function LoanListScreen({ navigation }) {
               Chưa trả xong
             </Text>
           </HStack>
-          <HStack>
+          <HStack  justifyContent={"space-between"}>
             <VStack pl={2}>
               <Text
                 mr={1}
@@ -34,7 +35,7 @@ export default function LoanListScreen({ navigation }) {
                 color={"coolGray.400"}
                 fontWeight={"medium"}
               >
-                Quỹ vay :
+                Quỹ vay 
               </Text>
               <Text
                 mr={1}
@@ -42,7 +43,7 @@ export default function LoanListScreen({ navigation }) {
                 color={"coolGray.400"}
                 fontWeight={"medium"}
               >
-                Số tiền :
+                Số tiền 
               </Text>
               <Text
                 mr={1}
@@ -50,7 +51,7 @@ export default function LoanListScreen({ navigation }) {
                 color={"coolGray.400"}
                 fontWeight={"medium"}
               >
-                Bắt đầu :
+                Còn lại 
               </Text>
               <Text
                 mr={1}
@@ -58,7 +59,7 @@ export default function LoanListScreen({ navigation }) {
                 color={"coolGray.400"}
                 fontWeight={"medium"}
               >
-                Lãi suất :
+                Bắt đầu 
               </Text>
               <Text
                 mr={1}
@@ -66,23 +67,34 @@ export default function LoanListScreen({ navigation }) {
                 color={"coolGray.400"}
                 fontWeight={"medium"}
               >
-                Ưu đãi :
+                Lãi suất 
+              </Text>
+              <Text
+                mr={1}
+                fontSize={16}
+                color={"coolGray.400"}
+                fontWeight={"medium"}
+              >
+                Ưu đãi 
               </Text>
             </VStack>
-            <VStack pl={2}>
-              <Text fontSize={16} fontWeight={"bold"}>
+            <VStack alignItems={"flex-end"} pl={2}>
+              <Text fontSize={16} fontWeight={"medium"}>
                 Vay mua xe
               </Text>
-              <Text fontSize={16} fontWeight={"bold"}>
+              <Text fontSize={16} fontWeight={"medium"}>
                 20.000.000
               </Text>
-              <Text fontSize={16} fontWeight={"bold"}>
+              <Text fontSize={16} fontWeight={"medium"}>
+                20.000.000
+              </Text>
+              <Text fontSize={16} fontWeight={"medium"}>
                 10/7/2023
               </Text>
-              <Text fontSize={16} fontWeight={"bold"}>
+              <Text fontSize={16} fontWeight={"medium"}>
                 7% / tháng
               </Text>
-              <Text fontSize={16} fontWeight={"bold"}>
+              <Text fontSize={16} fontWeight={"medium"}>
                 5% / 2 tháng
               </Text>
             </VStack>
@@ -135,7 +147,7 @@ export default function LoanListScreen({ navigation }) {
               >
                 Trả lãi :
               </Text>
-              <Text fontSize={16} fontWeight={"bold"}>
+              <Text fontSize={16} fontWeight={"medium"}>
                 700.000
               </Text>
             </HStack>
@@ -180,11 +192,12 @@ export default function LoanListScreen({ navigation }) {
               >
                 Trả lãi :
               </Text>
-              <Text fontSize={16} fontWeight={"bold"}>
+              <Text fontSize={16} fontWeight={"medium"}>
                 700.000
               </Text>
             </HStack>
-          </VStack><VStack>
+          </VStack>
+          <VStack>
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <Text
                 mr={1}
@@ -224,11 +237,12 @@ export default function LoanListScreen({ navigation }) {
               >
                 Trả lãi :
               </Text>
-              <Text fontSize={16} fontWeight={"bold"}>
+              <Text fontSize={16} fontWeight={"medium"}>
                 700.000
               </Text>
             </HStack>
-          </VStack><VStack>
+          </VStack>
+          <VStack>
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <Text
                 mr={1}
@@ -268,13 +282,15 @@ export default function LoanListScreen({ navigation }) {
               >
                 Trả lãi :
               </Text>
-              <Text fontSize={16} fontWeight={"bold"}>
+              <Text fontSize={16} fontWeight={"medium"}>
                 700.000
               </Text>
             </HStack>
           </VStack>
         </VStack>
       </View>
+      </TouchableOpacity>
+     
     </View>
   );
 }
