@@ -18,6 +18,8 @@ import ThemSoTietKiem from "../screens/AddInvest/Sotienkiem";
 import ThemQuyHui from "../screens/AddInvest/Quyhui";
 import ThemKhoanCoDinh from "../screens/AddInvest/Khoancodinh";
 import ChiTietQuyVay from "../screens/HomeScreen/Quyvay/chitietquyvay";
+import DanhSachSoTietKiem from "../screens/HomeScreen/Sotietkiem/dssotietkiem";
+import ChiTietSoTietKiem from "../screens/HomeScreen/Sotietkiem/chitietsotietkiem";
 export default function Navigation() {
   // hooks
   // action
@@ -148,6 +150,25 @@ function RootNavigator() {
           }}
           name="chitietquyvay"
           component={ChiTietQuyVay}
+        />
+        <Stack.Screen
+          options={{
+            title: "Sổ tiết kiệm",
+            headerShown: true,
+            gestureEnabled: true,
+          }}
+          name="dssotietkiem"
+          component={DanhSachSoTietKiem}
+        />
+         <Stack.Screen
+          options={{
+            headerBackTitleVisible :false,
+            title: "Chi tiết sổ tiết kiệm",
+            headerShown: true,
+            gestureEnabled: true,
+          }}
+          name="chitietsotietkiem"
+          component={ChiTietSoTietKiem}
         />
         <Stack.Screen
           options={{

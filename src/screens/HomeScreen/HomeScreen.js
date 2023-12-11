@@ -202,7 +202,7 @@ export function HomeScreen({ navigation }) {
                   </HStack>
                 </View>
               </TouchableOpacity>
-
+              <TouchableOpacity onPress={() => navigation.navigate("dssotietkiem")}>
               <View
                 p={3}
                 alignItems={"start"}
@@ -257,6 +257,7 @@ export function HomeScreen({ navigation }) {
                   <Entypo name="chevron-right" size={20} color="#adb5bd" />
                 </HStack>
               </View>
+              </TouchableOpacity>
             </HStack>
             <HStack justifyContent={"space-around"} h={"160"}>
               <View
