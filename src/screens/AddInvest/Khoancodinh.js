@@ -134,17 +134,17 @@ export default function ThemKhoanCoDinh({ navigation }) {
     }
   }
   
+  
   if (loading) {
     return (
-      <View zIndex={1} style={{ flex: 1, justifyContent: "center" }}>
+      <View style={{ flex: 1, justifyContent: "center" }}>
         <ActivityIndicator size="large" />
       </View>
     );
   }
 
-
   return (
-    <ScrollView automaticallyAdjustKeyboardInsets={true}>
+    <ScrollView  automaticallyAdjustKeyboardInsets={true}>
       <View
         justifyContent={"center"}
         borderRadius={10}
@@ -320,7 +320,6 @@ export default function ThemKhoanCoDinh({ navigation }) {
                 <TouchableOpacity
                   onPressIn={() => {
                     setIsValidateOnChange(true);
-                    setLoading(true);
                     validateForm().then(() => {
                       handleSubmit();
                     });
