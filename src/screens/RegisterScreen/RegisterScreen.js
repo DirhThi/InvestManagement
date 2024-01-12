@@ -124,6 +124,7 @@ export default function RegisterScreen({ navigation }) {
         fontSize={"16"}
         margin={"10"}
         borderRadius={"30"}
+        background={"blue.400"}
         width={"300"}
       >
         ĐĂNG KÍ

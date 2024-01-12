@@ -22,15 +22,10 @@ export default function UserScreen({ navigation }) {
   });
   const handleSigout = async () => {
     try {
-      await LogoutAccount();
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          console.log("user login : ", user.email);
-        } else {
+      
           dispatch(Logout());
           console.log("logout");
-        }
-      });
+        
     } catch (error) {
       console.log("Error login user:", error);
     }

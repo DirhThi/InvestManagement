@@ -40,7 +40,7 @@ export default function TotalScreen({ navigation }) {
               curved
               height={250}
               showVerticalLines
-              yAxisTextStyle={{ fontSize: "12" }}
+              yAxisTextStyle={{ fontSize: 12 }}
               spacing={52}
               initialSpacing={24}
               color1="skyblue"

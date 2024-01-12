@@ -13,9 +13,9 @@ export const Init = () => {
   }
 }
 
-export const Login = (uid) => {
+export const Login = (data) => {
   return async dispatch => {
-    let token = uid;  
+    let token = JSON.stringify(data);  
       // here we can use login api to get token and then store it
       await AsyncStorage.setItem('token', token);
       console.log('token stored');

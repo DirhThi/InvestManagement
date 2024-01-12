@@ -1,4 +1,4 @@
-import { View, Text, Select, Input, HStack, Button } from "native-base";
+import { View, Text, Select, Input, HStack, Button, FormControl,ScrollView,Toast } from "native-base";
 import { useState } from "react";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import {
@@ -8,6 +8,25 @@ import {
   Entypo,
 } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+
+const validateScheme = Yup.object({
+  ten: Yup.string().required('Vui lòng điền tên quỹ'),
+  sotien: Yup.number().required('Vui lòng điền số tiền'),
+  batdau: Yup.date().required('Vui lòng điền thời gian bắt đầu'),
+  chuki: Yup.number().required('Vui lòng điền chu kì'),
+  thoihan: Yup.number().required('Vui lòng điền thời hạn'),
+});
+
+const initFormValue = {
+  loaiquy: '',
+  ten:'',
+  sotien: '',
+  batdau: '',
+  chuki: '',
+  thoihan: '',
+};
 export default function ThemKhoanCoDinh({ navigation }) {
   const [loan, setLoan] = useState("Quỹ thu");
   const [chuki, setChuki] = useState("");
@@ -131,10 +150,10 @@ export default function ThemKhoanCoDinh({ navigation }) {
               </View>
             }
           >
-            <Select.Item label="Tuần" value="Tuần" />
-            <Select.Item label="Tháng" value="Tháng" />
-            <Select.Item label="Quý" value="Quý" />
-            <Select.Item label="Năm" value="Năm" />
+            <Select.Item label="Tuần" value="7" />
+            <Select.Item label="Tháng" value="30" />
+            <Select.Item label="Quý" value="90" />
+            <Select.Item label="Năm" value="365" />
           </Select>
         </View>
         <View w={"48%"}>
