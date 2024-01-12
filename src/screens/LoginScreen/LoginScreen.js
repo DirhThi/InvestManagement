@@ -36,7 +36,7 @@ export default function LoginScreen({ navigation }) {
           },
           body: JSON.stringify(values),
       });
-      const data = "await res.json()";
+      const data = await res.json();
       if (data.error) {
           toast.show({ description: data.error.message });
           console.log(data.error);
@@ -51,21 +51,7 @@ export default function LoginScreen({ navigation }) {
       setLoading(false);
   }
   
-  /*  try {
-      await LoginAccount(email, password);
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          console.log("current user : ",user.email);
-          console.log("current user : ",user.uid);
-          dispatch(Login(user.uid));
-        }
-        else{
-          console.log("no user login");
-        }
-      });
-    } catch (error) {
-      console.log("Error login user:", error);
-    }*/
+  
   };
 
   return (
