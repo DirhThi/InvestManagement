@@ -10,6 +10,7 @@ import {
   Toast,
 } from "native-base";
 import { useState } from "react";
+import { ActivityIndicator } from "react-native";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import {
   Feather,
@@ -36,6 +37,7 @@ const initFormValue = {
 };
 export default function ThemKhoanCoDinh({ navigation }) {
   const [loan, setLoan] = useState("Quỹ thu");
+  const [loaigiaodich, setloaigiaodich] = useState("Khoản thu");
   const [chuki, setChuki] = useState("30");
   const [loading, setLoading] = useState(false);
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
@@ -59,7 +61,7 @@ export default function ThemKhoanCoDinh({ navigation }) {
   async function handleThemKhoancodinh(values) {
     try {
       setLoading(true);
-      var dNow = new Date();
+      var dNow = new Date(date);
       var batdau =
         dNow.getFullYear() + "-" + (dNow.getMonth() + 1) + "-" + dNow.getDate();
       dNow.setDate(dNow.getDate() + chuki * values.thoihan);
@@ -86,6 +88,42 @@ export default function ThemKhoanCoDinh({ navigation }) {
         console.log(data.error);
         return;
       }
+      
+      if (loan == "Quỹ chi") {
+        setloaigiaodich("khoản chi");
+      } 
+      var dategd = new Date(batdau);
+      var day=chuki;
+      for (var i = 1; i <= values.thoihan; i++) {
+    
+        dategd.setDate(dategd.getDate() + Number(chuki) );
+        var thoigian =
+          dategd.getFullYear() +
+          "-" +
+          (dategd.getMonth() + 1) +
+          "-" +
+          dategd.getDate();
+
+        const res1 = await fetch(`${API}/lsgd/addlskcd`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            loaigiaodich: loaigiaodich,
+            sotien: values.sotien,
+            thoigian: thoigian,
+            quy: data._id,
+          }),
+        });
+        const data1 = await res1.json();
+        if (data1.error) {
+          Toast.show({ description: data1.error.message });
+          console.log(data1.error);
+          return;
+        }
+      }
+
       Toast.show({ description: "Thêm khoản cố định thành công" });
       navigation.goBack();
     } catch (error) {
@@ -95,6 +133,15 @@ export default function ThemKhoanCoDinh({ navigation }) {
       setLoading(false);
     }
   }
+  
+  if (loading) {
+    return (
+      <View zIndex={1} style={{ flex: 1, justifyContent: "center" }}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
+
 
   return (
     <ScrollView automaticallyAdjustKeyboardInsets={true}>
@@ -105,6 +152,7 @@ export default function ThemKhoanCoDinh({ navigation }) {
         m={2}
         bg={"white"}
       >
+       
         <Formik
           initialValues={initFormValue}
           validationSchema={validateScheme}
@@ -215,7 +263,7 @@ export default function ThemKhoanCoDinh({ navigation }) {
               </View>
               <HStack justifyContent={"space-between"}>
                 <View w={"48%"}>
-                  <FormControl isRequired >
+                  <FormControl isRequired>
                     <FormControl.Label>Chu kì</FormControl.Label>
                     <Select
                       h={12}
@@ -243,7 +291,6 @@ export default function ThemKhoanCoDinh({ navigation }) {
                       <Select.Item label="Quý" value="90" />
                       <Select.Item label="Năm" value="365" />
                     </Select>
-                    
                   </FormControl>
                 </View>
                 <View w={"48%"}>
@@ -252,7 +299,7 @@ export default function ThemKhoanCoDinh({ navigation }) {
                     <Input
                       InputRightElement={
                         <View mr={2}>
-                          <AntDesign name="reload1" size={20} color="gray"  />
+                          <AntDesign name="reload1" size={20} color="gray" />
                         </View>
                       }
                       value={values.thoihan}
