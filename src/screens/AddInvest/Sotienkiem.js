@@ -8,6 +8,7 @@ import {
   ScrollView,
   FormControl,
   Toast,
+  KeyboardAvoidingView,
 } from "native-base";
 import { useState } from "react";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
@@ -140,7 +141,7 @@ export default function ThemSoTietKiem({ navigation }) {
   }
 
   return (
-    <ScrollView  automaticallyAdjustKeyboardInsets={true}>
+    <KeyboardAvoidingView>
       <Formik
         initialValues={initFormValue}
         validationSchema={validateScheme}
@@ -339,6 +340,6 @@ export default function ThemSoTietKiem({ navigation }) {
           </View>
         )}
       </Formik>
-    </ScrollView>
+    </KeyboardAvoidingView>
   );
 }

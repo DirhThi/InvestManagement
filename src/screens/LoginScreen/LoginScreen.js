@@ -27,8 +27,6 @@ const initFormValue = {
 };
 
 export default function LoginScreen({ navigation }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const toast = useToast();
   const [loading, setLoading] = useState(false);
   const [isValidateOnChange, setIsValidateOnChange] = useState(false);

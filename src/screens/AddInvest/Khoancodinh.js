@@ -8,6 +8,7 @@ import {
   FormControl,
   ScrollView,
   Toast,
+  KeyboardAvoidingView,
 } from "native-base";
 import { useState } from "react";
 import { ActivityIndicator } from "react-native";
@@ -39,9 +40,9 @@ export default function ThemKhoanCoDinh({ navigation }) {
   const [loan, setLoan] = useState("Quỹ thu");
   const [loaigiaodich, setloaigiaodich] = useState("Khoản thu");
   const [chuki, setChuki] = useState("30");
-  const [loading, setLoading] = useState(false);
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [date, setDate] = useState(new Date());
+  const [loading, setLoading] = useState(false);
   const token = useSelector((state) => state.Reducers.authToken);
   const [isValidateOnChange, setIsValidateOnChange] = useState(false);
   const user = JSON.parse(token);
@@ -90,10 +91,12 @@ export default function ThemKhoanCoDinh({ navigation }) {
       }
       
       if (loan == "Quỹ chi") {
-        setloaigiaodich("khoản chi");
+        setloaigiaodich("Khoản chi");
+      } 
+      if (loan == "Quỹ thu") {
+        setloaigiaodich("Khoản thu");
       } 
       var dategd = new Date(batdau);
-      var day=chuki;
       for (var i = 1; i <= values.thoihan; i++) {
     
         dategd.setDate(dategd.getDate() + Number(chuki) );
@@ -144,7 +147,7 @@ export default function ThemKhoanCoDinh({ navigation }) {
   }
 
   return (
-    <ScrollView  automaticallyAdjustKeyboardInsets={true}>
+    <KeyboardAvoidingView>
       <View
         justifyContent={"center"}
         borderRadius={10}
@@ -348,6 +351,6 @@ export default function ThemKhoanCoDinh({ navigation }) {
           )}
         </Formik>
       </View>
-    </ScrollView>
+    </KeyboardAvoidingView>
   );
 }

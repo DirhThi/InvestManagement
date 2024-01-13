@@ -1,5 +1,5 @@
 const AppColors={
-    main:"#488600",
+    main:"#3887F9",
     white:"#FFFFFF",
     black:"#000000",
     lightBlack:"#BCBCBC",
